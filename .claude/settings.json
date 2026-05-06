@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx -y @cloudflare/next-on-pages@1)",
+      "Bash(tee /tmp/cf-build.log)",
+      "Bash(cat /tmp/cf-build.log 2>/dev/null | tail -100)",
+      "Read(//private/tmp/**)"
+    ]
+  }
+}
