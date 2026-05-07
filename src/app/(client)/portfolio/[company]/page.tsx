@@ -26,72 +26,131 @@ const staggerContainer = {
 const projectsData = {
   freelance: {
     title: 'Proyectos Freelance',
-    subtitle: 'Desarrollo de aplicaciones Mobile & Web para clientes diversos',
+    subtitle: 'Desarrollo de aplicaciones Mobile & Web para clientes en España, EEUU y LATAM',
     projects: [
+      // TK Analytics
       {
-        name: 'TaxFinder',
-        description: 'App mobile para gestión de impuestos en EEUU. Sistema completo con autenticación, cálculo de impuestos y generación de reportes.',
-        image: '/projects/taxfinder.png',
-        tech: ['React Native', 'Expo', 'Firebase', 'TypeScript'],
-        features: ['Autenticación', 'Cálculo de impuestos', 'Reportes PDF', 'Dashboard analytics'],
-        icon: <SiFirebase className="text-orange-500" size={20} />
+        client: 'TK Analytics',
+        name: 'LIONEC',
+        description: 'App de trading y wallet crypto con gráficas en tiempo real, KYC y autenticación 2FA.',
+        image: '/projects/Lionec_Oficial_Logo.png',
+        tech: ['React Native', 'Expo', 'TypeScript', 'WebSocket'],
+        features: ['Trading en tiempo real', 'Wallet crypto', 'KYC verificación', '2FA seguridad'],
+        icon: <FaDatabase className="text-yellow-500" size={20} />
       },
       {
-        name: 'DHM Taxes',
-        description: 'Ecosistema web/mobile para servicios legales y migratorios. Plataforma completa con gestión de casos y documentos.',
+        client: 'TK Analytics',
+        name: 'Kronos',
+        description: 'Sistema RRHH con fichaje GPS, nóminas, gestión de ausencias y generación de documentos.',
+        image: '/projects/kronos.png',
+        tech: ['React Native', 'TypeScript', 'GPS', 'Reports'],
+        features: ['Fichaje GPS', 'Nóminas', 'Gestión de ausencias', 'Generación de documentos'],
+        icon: <FaDatabase className="text-indigo-500" size={20} />
+      },
+      {
+        client: 'TK Analytics',
+        name: 'CAR',
+        description: 'Control de acceso, gestión de habitaciones y servicios para alojamientos.',
+        image: '/projects/LogoCAR.png',
+        tech: ['React Native', 'Expo', 'Firebase'],
+        features: ['Control de acceso', 'Gestión de habitaciones', 'Servicios para huéspedes', 'Panel admin'],
+        icon: <FaMobileAlt className="text-blue-500" size={20} />
+      },
+      {
+        client: 'TK Analytics',
+        name: 'Plataforma de Desguaces',
+        description: 'Plataforma web para gestión integral de desguaces de vehículos.',
+        image: '/projects/desguaces.svg',
+        tech: ['Next.js', 'PostgreSQL', 'Tailwind CSS'],
+        features: ['Catálogo de piezas', 'Búsqueda avanzada', 'Gestión de stock', 'Panel admin'],
+        icon: <SiNextdotjs className="text-black dark:text-white" size={20} />
+      },
+      // Natural Frío — España
+      {
+        client: 'Natural Frío — España',
+        name: 'Natural Frío',
+        description: 'Migración del CRM Next.js a aplicación móvil nativa con cobros, firma digital y exportación PDF.',
+        image: '/projects/natural-frio.png',
+        tech: ['React Native', 'Expo', 'Signature Canvas', 'react-native-html-to-pdf'],
+        features: ['Gestión de pedidos', 'Cobros en sitio', 'Firma digital', 'Exportación PDF'],
+        icon: <FaTools className="text-blue-500" size={20} />
+      },
+      // DHM Taxes and More
+      {
+        client: 'DHM Taxes and More',
+        name: 'App de Contenido',
+        description: 'App móvil con cursos en video, podcasts y gestión de citas para clientes.',
         image: '/projects/dhm.svg',
-        tech: ['Next.js', 'React Native', 'PostgreSQL', 'Tailwind CSS'],
-        features: ['Gestión de casos', 'Documentos legales', 'Sistema de pagos', 'Notificaciones push'],
+        tech: ['React Native', 'Expo', 'expo-audio', 'react-native-video'],
+        features: ['Cursos en video', 'Podcasts', 'Gestión de citas', 'Reproductor integrado'],
+        icon: <SiNextdotjs className="text-black dark:text-white" size={20} />
+      },
+      // TaxFinder — EEUU
+      {
+        client: 'TaxFinder — EEUU',
+        name: 'Videollamadas Nativas',
+        description: 'App con videollamadas nativas (WebRTC), agenda y mensajería integrada.',
+        image: '/projects/taxfinder.png',
+        tech: ['React Native', 'Stream.io', 'WebRTC', 'Firebase'],
+        features: ['Videollamadas WebRTC', 'Agenda', 'Mensajería', 'Llamadas nativas (Callkeep)'],
+        icon: <SiFirebase className="text-orange-500" size={20} />
+      },
+      // Falcon — EEUU
+      {
+        client: 'Falcon — EEUU',
+        name: 'Falcon',
+        description: 'App empresarial modular: soporte in-app, gestión PDF y firma digital.',
+        image: '/projects/LogoFalcon.png',
+        tech: ['React Native', 'Zendesk', 'react-native-html-to-pdf', 'Signature Canvas'],
+        features: ['Soporte in-app (Zendesk)', 'Gestión de PDF', 'Firma digital', 'Arquitectura modular'],
+        icon: <FaMobileAlt className="text-red-500" size={20} />
+      }
+    ]
+  },
+  personal: {
+    title: 'Proyectos Personales',
+    subtitle: 'Productos propios y exploraciones técnicas',
+    projects: [
+      {
+        name: 'AdsVisual',
+        description: 'Plataforma de acortamiento de URLs con monetización, membresías, campañas CPM y estadísticas geolocalizadas. CTO · 15% acciones.',
+        image: '/projects/AdsVisual.jpeg',
+        tech: ['Next.js', 'Prisma', 'MariaDB', 'NextAuth', 'Shadcn/UI', 'Zustand'],
+        features: ['Acortamiento de URLs', 'Membresías', 'Campañas CPM', 'Estadísticas geolocalizadas'],
         icon: <SiNextdotjs className="text-black dark:text-white" size={20} />
       },
       {
-        name: 'Impostor',
-        description: 'Juego mobile de entretenimiento desarrollado para Android. Juego multijugador con salas y chat en tiempo real.',
-        image: '/projects/impostor.png',
-        tech: ['React Native', 'Expo', 'WebSocket', 'Zustand'],
-        features: ['Multijugador', 'Salas privadas', 'Chat en tiempo real', 'Ranking global'],
-        icon: <FaGamepad className="text-purple-500" size={20} />
-      },
-      {
-        name: 'Natural Frío',
-        description: 'Gestión de servicios técnicos de refrigeración. Sistema de pedidos y seguimiento para técnicos.',
-        image: '/projects/natural-frio.png',
-        tech: ['Expo', 'React Native', 'SQLite', 'GPS'],
-        features: ['Gestión de pedidos', 'Seguimiento GPS', 'Agenda técnica', 'Historial de servicios'],
-        icon: <FaTools className="text-blue-500" size={20} />
-      },
-      {
-        name: 'Sistema Inventario',
-        description: 'Control de stock y ventas para negocios locales. Sistema completo con POS y reportes.',
-        image: '/projects/inventario.png',
-        tech: ['React', 'Next.js', 'SQL', 'Chart.js'],
-        features: ['Gestión de inventario', 'Point of Sale', 'Reportes analíticos', 'Exportación de datos'],
-        icon: <FaDatabase className="text-green-500" size={20} />
-      },
-      {
-        name: 'Estucalia',
-        description: 'Landing page institucional con sistema de citas y contacto.',
-        image: '/projects/estucalia.svg',
-        tech: ['Next.js', 'Tailwind CSS', 'Formspree'],
-        features: ['Diseño responsive', 'Sistema de citas', 'Galería de trabajos', 'Contacto integrado'],
+        name: 'Airbnb Clone',
+        description: 'Reservas de alojamiento, gestión de disponibilidad y pagos integrados.',
+        image: '/projects/airbnb.jpeg',
+        tech: ['Next.js', 'Supabase', 'Stripe', 'Radix UI'],
+        features: ['Reservas', 'Disponibilidad', 'Pagos integrados', 'Búsqueda avanzada'],
         icon: <SiReact className="text-blue-400" size={20} />
       },
       {
-        name: 'Desguaces',
-        description: 'Plataforma para gestión de autopartes y vehículos usados.',
-        image: '/projects/desguaces.svg',
-        tech: ['React Native', 'Expo', 'Firebase', 'Camera API'],
-        features: ['Catálogo de piezas', 'Búsqueda avanzada', 'Subir fotos', 'Chat con vendedores'],
-        icon: <FaMobileAlt className="text-green-600" size={20} />
+        name: 'Impostor',
+        description: 'Juego de mesa digital multijugador tipo Werewolf con rondas de debate y roles secretos.',
+        image: '/projects/impostor.png',
+        tech: ['Next.js', 'TailwindCSS'],
+        features: ['Multijugador', 'Roles secretos', 'Rondas de debate', 'Salas privadas'],
+        icon: <FaGamepad className="text-purple-500" size={20} />
       },
       {
-        name: 'Kronos',
-        description: 'App de control de tiempo y asistencia para empresas.',
-        image: '/projects/kronos.png',
-        tech: ['React Native', 'TypeScript', 'Biometrics', 'Reports'],
-        features: ['Control de asistencia', 'Reportes horarios', 'Geolocalización', 'Integración payroll'],
-        icon: <FaDatabase className="text-indigo-500" size={20} />
-      }
+        name: 'JP Restaurante',
+        description: 'Web de menú y reservas para restaurante.',
+        image: '/projects/logo-jp.svg',
+        tech: ['Next.js', 'Cloudflare'],
+        features: ['Menú digital', 'Reservas online', 'Diseño responsive'],
+        icon: <SiNextdotjs className="text-black dark:text-white" size={20} />
+      },
+      {
+        name: 'Quiz App',
+        description: 'App móvil de quizzes y cuestionarios interactivos.',
+        image: '/projects/quiz.png',
+        tech: ['Expo', 'GluestackUI'],
+        features: ['Quizzes interactivos', 'Cuestionarios', 'UI nativa'],
+        icon: <SiExpo className="text-black dark:text-white" size={20} />
+      },
     ]
   },
   fyself: {
@@ -170,6 +229,32 @@ const projectsData = {
   }
 };
 
+type Project = {
+  name: string;
+  description: string;
+  image: string;
+  tech: string[];
+  features: string[];
+  icon: React.ReactNode;
+  client?: string;
+};
+
+function groupByClient(projects: Project[]): { client: string | null; items: Project[] }[] {
+  const hasAnyClient = projects.some(p => p.client);
+  if (!hasAnyClient) return [{ client: null, items: projects }];
+  const groups: { client: string | null; items: Project[] }[] = [];
+  for (const p of projects) {
+    const key = p.client ?? '';
+    const last = groups[groups.length - 1];
+    if (last && last.client === key) {
+      last.items.push(p);
+    } else {
+      groups.push({ client: key, items: [p] });
+    }
+  }
+  return groups;
+}
+
 export default function PortfolioPage({ params }: { params: { company: string } }) {
   const router = useRouter();
   const company = params.company;
@@ -180,8 +265,10 @@ export default function PortfolioPage({ params }: { params: { company: string } 
     return null;
   }
 
+  const groups = groupByClient(data.projects as Project[]);
+
   return (
-    <motion.section 
+    <motion.section
       initial="initial"
       animate="animate"
       variants={staggerContainer}
@@ -189,7 +276,7 @@ export default function PortfolioPage({ params }: { params: { company: string } 
     >
       {/* Header */}
       <motion.div variants={fadeInUp} transition={transition} className="text-center mb-12">
-        <button 
+        <button
           onClick={() => router.push('/')}
           className="mb-6 text-sm text-gray-500 hover:text-red-500 transition-colors"
         >
@@ -199,9 +286,17 @@ export default function PortfolioPage({ params }: { params: { company: string } 
         <p className="text-lg text-gray-600 dark:text-gray-400">{data.subtitle}</p>
       </motion.div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {data.projects.map((project, index) => (
+      {/* Projects */}
+      <div className="space-y-10">
+        {groups.map((group, gIdx) => (
+          <div key={group.client ?? `g-${gIdx}`}>
+            {group.client && (
+              <h2 className="text-xl font-semibold mb-4 pl-3 border-l-2 border-red-500/70">
+                {group.client}
+              </h2>
+            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {group.items.map((project, index) => (
           <motion.div
             key={project.name}
             variants={fadeInUp}
@@ -226,9 +321,6 @@ export default function PortfolioPage({ params }: { params: { company: string } 
                   className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
                 />
               )}
-              <div className="absolute top-4 left-4 p-2 bg-white dark:bg-gray-800 rounded-lg shadow-md z-10">
-                {project.icon}
-              </div>
             </div>
 
             {/* Content */}
@@ -256,6 +348,9 @@ export default function PortfolioPage({ params }: { params: { company: string } 
               </div>
             </div>
           </motion.div>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </motion.section>

@@ -2,7 +2,11 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { SiNextdotjs, SiPostgresql, SiReact, SiTypescript, SiExpo, SiOpenai } from 'react-icons/si';
+import {
+  SiNextdotjs, SiPostgresql, SiReact, SiTypescript, SiExpo, SiOpenai,
+  SiSupabase, SiPrisma, SiStripe, SiTailwindcss, SiCloudflare, SiRedux, SiSanity,
+  SiJavascript, SiHtml5,
+} from 'react-icons/si';
 import { FaRobot, FaMobileAlt, FaTerminal } from 'react-icons/fa';
 
 export const runtime = 'edge';
@@ -14,12 +18,11 @@ function getAge(): number {
   let age = today.getFullYear() - birthDate.getFullYear();
   const monthDiff = today.getMonth() - birthDate.getMonth();
   const dayDiff = today.getDate() - birthDate.getDate();
-  
-  // Si no ha cumplido años este año, restar 1
+
   if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
     age--;
   }
-  
+
   return age;
 }
 
@@ -45,16 +48,16 @@ export default function Page() {
   const handleExperienceClick = (company: string) => {
     router.push(`/portfolio/${company}`);
   };
-  
+
   return (
-    <motion.section 
+    <motion.section
       initial="initial"
       animate="animate"
       variants={staggerContainer}
       className="max-w-3xl mx-auto"
     >
       {/* Header con Avatar */}
-      <motion.div 
+      <motion.div
         variants={fadeInUp}
         className="flex flex-col items-center text-center mb-8 pt-4"
       >
@@ -72,22 +75,22 @@ export default function Page() {
           Eslán Sánchez
         </h1>
         <p className="text-red-500 font-medium">
-          Desarrollador Mobile & Web
+          Desarrollador Full Stack & Mobile
         </p>
       </motion.div>
 
       {/* Bio */}
-      <motion.div 
+      <motion.div
         variants={fadeInUp}
         transition={transition}
         className="mb-8 p-4 border border-gray-200 dark:border-gray-800 rounded-md dark:bg-gray-950/50"
       >
         <p className="text-center text-lg leading-relaxed">
-          Desarrollador de software con enfoque en <strong>aplicaciones móviles</strong>. 
-          Soy de Cuba, tengo {age} años. Actualmente trabajo como desarrollador y profesor 
-          en la Universidad de Ciencias Informáticas, además de proyectos freelance. 
-          Me apasiona aprender nuevas tecnologías y compartir conocimiento. 
-          Actualmente explorando nuevas tecnologías de forma autodidacta, con especial interés 
+          Desarrollador full stack & mobile con cerca de <strong>5 años de experiencia</strong> con clientes y empresas.
+          Soy de Cuba, tengo {age} años. Actualmente trabajo en la Universidad de Ciencias Informáticas,
+          donde he colaborado como profesor y en distintos proyectos, además de proyectos freelance.
+          Me apasiona aprender nuevas tecnologías y compartir conocimiento.
+          Actualmente explorando nuevas tecnologías de forma autodidacta, con especial interés
           en el desarrollo asistido por IA y herramientas que potencian la productividad del desarrollador.
         </p>
       </motion.div>
@@ -98,7 +101,7 @@ export default function Page() {
           Experiencia Actual
         </h2>
         <div className="space-y-4">
-          <div 
+          <div
             className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/50 dark:bg-gray-900/20 cursor-pointer"
             onClick={() => handleExperienceClick('uci')}
           >
@@ -107,14 +110,15 @@ export default function Page() {
             <div className="neon-bottom"></div>
             <div className="neon-left"></div>
             <div>
-              <h3 className="font-medium">Desarrollador de Software & Profesor</h3>
+              <h3 className="font-medium">Desarrollador de Software</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Universidad de Ciencias Informáticas (UCI)</p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Colaboraciones como profesor y en distintos proyectos.</p>
               <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">La Habana, Cuba</p>
             </div>
             <span className="text-sm text-gray-500 dark:text-gray-500">oct. 2025 - Presente</span>
           </div>
-          
-          <div 
+
+          <div
             className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/50 dark:bg-gray-900/20 cursor-pointer"
             onClick={() => handleExperienceClick('freelance')}
           >
@@ -129,6 +133,22 @@ export default function Page() {
             </div>
             <span className="text-sm text-gray-500 dark:text-gray-500">oct. 2025 - Presente</span>
           </div>
+
+          <div
+            className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/50 dark:bg-gray-900/20 cursor-pointer"
+            onClick={() => handleExperienceClick('personal')}
+          >
+            <div className="neon-top"></div>
+            <div className="neon-right"></div>
+            <div className="neon-bottom"></div>
+            <div className="neon-left"></div>
+            <div>
+              <h3 className="font-medium">Proyectos Personales</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Productos propios y exploraciones técnicas</p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">AdsVisual · Airbnb Clone · Impostor · JP Restaurante · Quiz App</p>
+            </div>
+            <span className="text-sm text-gray-500 dark:text-gray-500">2021 - Presente</span>
+          </div>
         </div>
       </motion.div>
 
@@ -138,7 +158,7 @@ export default function Page() {
           Experiencia Previas
         </h2>
         <div className="space-y-3 text-sm">
-          <div 
+          <div
             className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/30 dark:bg-gray-900/10 cursor-pointer"
             onClick={() => handleExperienceClick('fyself')}
           >
@@ -152,8 +172,8 @@ export default function Page() {
             </div>
             <span className="text-gray-500 dark:text-gray-500">jun. 2024 - ene. 2026</span>
           </div>
-          
-          <div 
+
+          <div
             className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/30 dark:bg-gray-900/10 cursor-pointer"
             onClick={() => handleExperienceClick('xetid')}
           >
@@ -191,7 +211,7 @@ export default function Page() {
         <h2 className="text-xl font-semibold mb-4 pb-2 border-b dark:border-gray-800">
           Habilidades
         </h2>
-        
+
         {/* Mobile Development */}
         <div className="mb-4">
           <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wide">
@@ -204,15 +224,43 @@ export default function Page() {
             </span>
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
               <SiExpo className="mr-2" size={16} />
-              Expo
+              Expo / Expo Router
             </span>
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
               <FaMobileAlt className="mr-2" size={16} />
-              NativeWind & Navigation
+              NativeWind
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <FaMobileAlt className="mr-2" size={16} />
+              GluestackUI
             </span>
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
               <SiOpenai className="mr-2 text-orange-500" size={16} />
-              Firebase & Zustand
+              Firebase
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              Stream.io (WebRTC)
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              expo-audio
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              react-native-video
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              expo-location (GPS)
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              react-native-html-to-pdf
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              Signature Canvas
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              QR Code
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              Zendesk in-app
             </span>
           </div>
         </div>
@@ -225,19 +273,82 @@ export default function Page() {
           <div className="flex flex-wrap gap-2">
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
               <SiReact className="mr-2 text-blue-400" size={16} />
-              React & Next.js
+              React
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <SiNextdotjs className="mr-2" size={16} />
+              Next.js
             </span>
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
               <SiTypescript className="mr-2 text-blue-600" size={16} />
               TypeScript
             </span>
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
-              <SiPostgresql className="mr-2 text-blue-700" size={16} />
-              SQL & NoSQL
+              <SiJavascript className="mr-2 text-yellow-400" size={16} />
+              JavaScript
             </span>
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
-              <SiNextdotjs className="mr-2" size={16} />
-              Shadcn UI & Tailwind
+              <SiHtml5 className="mr-2 text-orange-500" size={16} />
+              HTML / CSS
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <SiTailwindcss className="mr-2 text-cyan-400" size={16} />
+              Tailwind / Shadcn UI
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <SiSupabase className="mr-2 text-green-500" size={16} />
+              Supabase
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <SiPostgresql className="mr-2 text-blue-700" size={16} />
+              PostgreSQL / MariaDB
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <SiPrisma className="mr-2" size={16} />
+              Prisma ORM
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              NextAuth
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <SiCloudflare className="mr-2 text-orange-500" size={16} />
+              Cloudflare
+            </span>
+          </div>
+        </div>
+
+        {/* Estado & Datos */}
+        <div className="mb-4">
+          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wide">
+            Estado & Datos
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              Zustand
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <SiRedux className="mr-2 text-purple-500" size={16} />
+              Redux
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              TanStack Query
+            </span>
+          </div>
+        </div>
+
+        {/* Pagos & Contenido */}
+        <div className="mb-4">
+          <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wide">
+            Pagos & Contenido
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <SiStripe className="mr-2 text-indigo-500" size={16} />
+              Stripe
+            </span>
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-sm">
+              <SiSanity className="mr-2 text-red-500" size={16} />
+              Sanity CMS
             </span>
           </div>
         </div>
@@ -272,15 +383,15 @@ export default function Page() {
           transition: transform 0.2s ease;
           overflow: visible;
         }
-        
+
         .dark .experience-card {
           background: rgba(17, 24, 39, 0.2);
         }
-        
+
         .experience-card:hover {
           transform: translateY(-2px);
         }
-        
+
         /* Líneas de neón para cada lado */
         .experience-card .neon-top,
         .experience-card .neon-right,
@@ -292,14 +403,14 @@ export default function Page() {
           transition: opacity 0.3s ease;
           box-shadow: 0 0 10px #ef4444, 0 0 20px #ef4444, 0 0 30px #ef4444;
         }
-        
+
         .experience-card:hover .neon-top,
         .experience-card:hover .neon-right,
         .experience-card:hover .neon-bottom,
         .experience-card:hover .neon-left {
           opacity: 1;
         }
-        
+
         /* Top - se mueve de izquierda a derecha */
         .neon-top {
           top: -2px;
@@ -308,11 +419,11 @@ export default function Page() {
           height: 3px;
           animation: none;
         }
-        
+
         .experience-card:hover .neon-top {
           animation: move-top 3s linear infinite;
         }
-        
+
         /* Right - se mueve de arriba a abajo */
         .neon-right {
           top: 0;
@@ -321,12 +432,12 @@ export default function Page() {
           height: 0;
           animation: none;
         }
-        
+
         .experience-card:hover .neon-right {
           animation: move-right 3s linear infinite;
           animation-delay: 0.75s;
         }
-        
+
         /* Bottom - se mueve de derecha a izquierda */
         .neon-bottom {
           bottom: -2px;
@@ -335,12 +446,12 @@ export default function Page() {
           height: 3px;
           animation: none;
         }
-        
+
         .experience-card:hover .neon-bottom {
           animation: move-bottom 3s linear infinite;
           animation-delay: 1.5s;
         }
-        
+
         /* Left - se mueve de abajo a arriba */
         .neon-left {
           bottom: 0;
@@ -349,33 +460,33 @@ export default function Page() {
           height: 0;
           animation: none;
         }
-        
+
         .experience-card:hover .neon-left {
           animation: move-left 3s linear infinite;
           animation-delay: 2.25s;
         }
-        
+
         @keyframes move-top {
           0% { width: 0; left: 0; }
           25% { width: 100%; left: 0; }
           50% { width: 0; left: 100%; }
           100% { width: 0; left: 100%; }
         }
-        
+
         @keyframes move-right {
           0% { height: 0; top: 0; }
           25% { height: 100%; top: 0; }
           50% { height: 0; top: 100%; }
           100% { height: 0; top: 100%; }
         }
-        
+
         @keyframes move-bottom {
           0% { width: 0; right: 0; }
           25% { width: 100%; right: 0; }
           50% { width: 0; right: 100%; }
           100% { width: 0; right: 100%; }
         }
-        
+
         @keyframes move-left {
           0% { height: 0; bottom: 0; }
           25% { height: 100%; bottom: 0; }
