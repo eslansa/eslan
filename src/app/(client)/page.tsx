@@ -44,6 +44,8 @@ const staggerContainer = {
 export default function Page() {
   const age = getAge();
   const router = useRouter();
+  const experienceCardClassName =
+    'experience-card group flex cursor-pointer items-start justify-between gap-4 rounded-md border border-gray-900 p-3 shadow-sm shadow-red-950 hover:bg-red-500 hover:text-white hover:shadow-md dark:border-gray-900 dark:hover:bg-gray-950';
 
   const handleExperienceClick = (company: string) => {
     router.push(`/portfolio/${company}`);
@@ -102,7 +104,7 @@ export default function Page() {
         </h2>
         <div className="space-y-4">
           <div
-            className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/50 dark:bg-gray-900/20 cursor-pointer"
+            className={experienceCardClassName}
             onClick={() => handleExperienceClick('uci')}
           >
             <div className="neon-top"></div>
@@ -111,15 +113,15 @@ export default function Page() {
             <div className="neon-left"></div>
             <div>
               <h3 className="font-medium">Desarrollador de Software</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Universidad de Ciencias Informáticas (UCI)</p>
-              <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Colaboraciones como profesor y en distintos proyectos.</p>
-              <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">La Habana, Cuba</p>
+              <p className="text-sm text-gray-600 transition-colors group-hover:text-white dark:text-gray-400">Universidad de Ciencias Informáticas (UCI)</p>
+              <p className="mt-1 text-xs text-gray-500 transition-colors group-hover:text-white dark:text-gray-500">Colaboraciones como profesor y en distintos proyectos.</p>
+              <p className="mt-1 text-xs text-gray-500 transition-colors group-hover:text-white dark:text-gray-500">La Habana, Cuba</p>
             </div>
-            <span className="text-sm text-gray-500 dark:text-gray-500">oct. 2025 - Presente</span>
+            <span className="text-sm text-gray-500 transition-colors group-hover:text-white dark:text-gray-500">oct. 2025 - Presente</span>
           </div>
 
           <div
-            className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/50 dark:bg-gray-900/20 cursor-pointer"
+            className={experienceCardClassName}
             onClick={() => handleExperienceClick('freelance')}
           >
             <div className="neon-top"></div>
@@ -128,14 +130,14 @@ export default function Page() {
             <div className="neon-left"></div>
             <div>
               <h3 className="font-medium">Software Developer · Freelance</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Desarrollo de aplicaciones Mobile & Web</p>
-              <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Remoto · La Habana, Cuba</p>
+              <p className="text-sm text-gray-600 transition-colors group-hover:text-white dark:text-gray-400">Desarrollo de aplicaciones Mobile & Web</p>
+              <p className="mt-1 text-xs text-gray-500 transition-colors group-hover:text-white dark:text-gray-500">Remoto · La Habana, Cuba</p>
             </div>
-            <span className="text-sm text-gray-500 dark:text-gray-500">oct. 2025 - Presente</span>
+            <span className="text-sm text-gray-500 transition-colors group-hover:text-white dark:text-gray-500">oct. 2025 - Presente</span>
           </div>
 
           <div
-            className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/50 dark:bg-gray-900/20 cursor-pointer"
+            className={experienceCardClassName}
             onClick={() => handleExperienceClick('personal')}
           >
             <div className="neon-top"></div>
@@ -144,10 +146,10 @@ export default function Page() {
             <div className="neon-left"></div>
             <div>
               <h3 className="font-medium">Proyectos Personales</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Productos propios y exploraciones técnicas</p>
-              <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">AdsVisual · Airbnb Clone · Impostor · JP Restaurante · Quiz App</p>
+              <p className="text-sm text-gray-600 transition-colors group-hover:text-white dark:text-gray-400">Productos propios y exploraciones técnicas</p>
+              <p className="mt-1 text-xs text-gray-500 transition-colors group-hover:text-white dark:text-gray-500">AdsVisual · Airbnb Clone · Impostor · JP Restaurante · Quiz App</p>
             </div>
-            <span className="text-sm text-gray-500 dark:text-gray-500">2021 - Presente</span>
+            <span className="text-sm text-gray-500 transition-colors group-hover:text-white dark:text-gray-500">2021 - Presente</span>
           </div>
         </div>
       </motion.div>
@@ -159,7 +161,7 @@ export default function Page() {
         </h2>
         <div className="space-y-3 text-sm">
           <div
-            className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/30 dark:bg-gray-900/10 cursor-pointer"
+            className={experienceCardClassName}
             onClick={() => handleExperienceClick('fyself')}
           >
             <div className="neon-top"></div>
@@ -168,13 +170,13 @@ export default function Page() {
             <div className="neon-left"></div>
             <div>
               <h3 className="font-medium">Frontend Developer</h3>
-              <p className="text-gray-600 dark:text-gray-400">Fyself · Part-time</p>
+              <p className="text-gray-600 transition-colors group-hover:text-white dark:text-gray-400">Fyself · Part-time</p>
             </div>
-            <span className="text-gray-500 dark:text-gray-500">jun. 2024 - ene. 2026</span>
+            <span className="text-gray-500 transition-colors group-hover:text-white dark:text-gray-500">jun. 2024 - ene. 2026</span>
           </div>
 
           <div
-            className="experience-card flex justify-between items-start p-3 border border-gray-200 dark:border-gray-800 rounded-md bg-gray-50/30 dark:bg-gray-900/10 cursor-pointer"
+            className={experienceCardClassName}
             onClick={() => handleExperienceClick('xetid')}
           >
             <div className="neon-top"></div>
@@ -183,9 +185,9 @@ export default function Page() {
             <div className="neon-left"></div>
             <div>
               <h3 className="font-medium">Frontend Web Developer</h3>
-              <p className="text-gray-600 dark:text-gray-400">XETID · Prácticas</p>
+              <p className="text-gray-600 transition-colors group-hover:text-white dark:text-gray-400">XETID · Prácticas</p>
             </div>
-            <span className="text-gray-500 dark:text-gray-500">feb. 2023 - jun. 2024</span>
+            <span className="text-gray-500 transition-colors group-hover:text-white dark:text-gray-500">feb. 2023 - jun. 2024</span>
           </div>
         </div>
       </motion.div>
@@ -379,13 +381,9 @@ export default function Page() {
       <style jsx global>{`
         .experience-card {
           position: relative;
-          background: #f9fafb;
-          transition: transform 0.2s ease;
+          background: transparent;
+          transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
           overflow: visible;
-        }
-
-        .dark .experience-card {
-          background: rgba(17, 24, 39, 0.2);
         }
 
         .experience-card:hover {
